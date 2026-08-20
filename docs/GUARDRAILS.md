@@ -7,6 +7,7 @@
 - Generating candidate failure modes and edge cases
 - Improving discussion guides and research questions
 - Comparing how explicitly defined behavioral lenses interpret the same workflow
+- Testing whether an optional OCEAN variation changes style without inventing facts or authority
 
 ## Inappropriate uses
 
@@ -16,6 +17,7 @@
 - Making high-stakes employment, financial, legal, medical, safety, or access decisions
 - Fabricating participant quotations, prevalence, or statistical confidence
 - Simulating a real identifiable individual without authorization
+- Treating an assumed personality profile as psychological assessment or customer evidence
 
 ## Data handling
 
@@ -54,6 +56,8 @@ unless the statement is supported by appropriate real-world evidence.
 
 - Reveal only the information a real participant would have at that point.
 - Permit reasonable, evidence-consistent inference but require assumptions to be labeled.
+- Label OCEAN values as illustrative unless supported by an appropriate measurement process.
+- Use personality only as a broad tendency layer; never infer domain knowledge, goals, decision rights, or product needs from it.
 - Prevent the model from inventing product behavior, policy, organizational history, or prior experience.
 - Keep the simulation in the participant lens rather than allowing it to become a generic design expert.
 - Run material decisions through the three-question trust test: traceability, downstream impact, and decision authority.

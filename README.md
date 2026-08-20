@@ -4,9 +4,19 @@ An open, practical toolkit for using constraint-based synthetic personas to stre
 
 > **Project status:** Experimental and educational. Outputs are hypotheses, not customer evidence or product validation.
 
+## Try the interactive lab
+
+Open the [Synthetic Persona Pre-flight Lab](https://yswami.github.io/SyntheticPersona/) to:
+
+- configure a role, context, behavioral constraints, and evidence status;
+- optionally explore continuous OCEAN personality variation;
+- load the fictional enterprise PPM example;
+- generate, copy, or download a transparent reviewer prompt; and
+- do everything locally without an account, API key, analytics, or stored inputs.
+
 ## Start here
 
-1. Copy the [enterprise PPM reviewer prompt](prompts/enterprise-ppm-reviewer.md).
+1. Use the [interactive lab](https://yswami.github.io/SyntheticPersona/) or copy the [enterprise PPM reviewer prompt](prompts/enterprise-ppm-reviewer.md).
 2. Walk through the [hypothetical milestone-recovery scenario](examples/ppm-milestone-recovery/scenario.md), revealing one step at a time.
 3. Compare your run with the [illustrative simulated output](examples/ppm-milestone-recovery/simulated-output.md).
 4. Apply the three-question trust test:
@@ -14,6 +24,7 @@ An open, practical toolkit for using constraint-based synthetic personas to stre
    - Can the user see the wider impact?
    - Can the user control what happens next?
 5. Before calling a reviewer an evidence-backed archetype, use the [evidence repository template](templates/evidence-repository-template.csv) and [archetype card](templates/archetype-card.md).
+6. Read [how OCEAN fits—and where it does not](docs/OCEAN.md).
 
 ## What this project is
 
@@ -40,19 +51,28 @@ There are two deliberately different maturity levels:
 
 The repository starts with Level 1 and provides the structure needed to progress toward Level 2. See [the full method](docs/METHOD.md).
 
+OCEAN is an optional variation layer at either level. An assumed personality profile does not promote a Level 1 reviewer to Level 2.
+
 ## Repository map
 
 ```text
 .
+├── app.js
 ├── docs/
 │   ├── GUARDRAILS.md
-│   └── METHOD.md
+│   ├── METHOD.md
+│   └── OCEAN.md
 ├── examples/
 │   └── ppm-milestone-recovery/
 │       ├── scenario.md
 │       └── simulated-output.md
+├── index.html
+├── ocean.html
 ├── prompts/
 │   └── enterprise-ppm-reviewer.md
+├── styles.css
+├── .github/
+│   └── workflows/pages.yml
 ├── templates/
 │   ├── archetype-card.md
 │   └── evidence-repository-template.csv
@@ -76,7 +96,17 @@ The included PPM example is entirely fictional. Project names, values, workflow 
 
 ## Roadmap
 
-Day 5 will add a privacy-conscious GitHub Pages experience for configuring a reviewer, generating a prompt, and exploring the example without storing user inputs or API keys. See [ROADMAP.md](ROADMAP.md).
+The Day 5 GitHub Pages experience is now included. See [ROADMAP.md](ROADMAP.md) for future experiments.
+
+## Run locally
+
+The site has no build step or dependencies:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/`. All prompt generation happens in the browser.
 
 ## Independence
 

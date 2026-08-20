@@ -39,8 +39,15 @@ Validation with real people
 | Supporting trait | An observed behavior supporting that position | Requests a preview and override before accepting a change |
 | Evidence reference | The source of the observation | Interview or observation record E-014 |
 | Archetype | A recurring pattern across multiple dimensions and participants | A controlled-automation lens, if supported by a defensible cluster |
+| OCEAN profile | Optional continuous personality-variation scaffold | Illustrative scores used to compare response tendencies, not to infer authority or needs |
 
 The examples above explain the structure. They are not research findings.
+
+## Where OCEAN fits
+
+OCEAN is optional and separate from the evidence pipeline. It can introduce controlled variation in communication and broad response tendencies, but it does not supply domain knowledge, behavioral evidence, decision authority, or product needs.
+
+An assumed OCEAN profile remains an assumption. An evidence-backed personality profile requires an appropriate measurement process and still does not replace task-specific behavioral research. See the [OCEAN evaluation](OCEAN.md).
 
 ## Step 1: Frame the research question
 

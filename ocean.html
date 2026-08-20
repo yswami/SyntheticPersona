@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An evidence-based evaluation of OCEAN as an optional personality-variation layer in synthetic persona design.">
+    <meta name="theme-color" content="#f4efe6">
+    <meta property="og:title" content="OCEAN in Synthetic Personas | Independent Evaluation">
+    <meta property="og:description" content="Where OCEAN helps synthetic-persona work, where it does not, and the guardrails needed for responsible use.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yswami.github.io/SyntheticPersona/ocean.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://yswami.github.io/SyntheticPersona/ocean.html">
+    <title>OCEAN Evaluation · Synthetic Persona Pre-flight Lab</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="article-page">
+    <a class="skip-link" href="#article">Skip to the article</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Return to Synthetic Persona Lab">
+        <span class="brand-mark" aria-hidden="true">SP</span>
+        <span>Pre-flight Lab</span>
+      </a>
+      <nav aria-label="Article navigation">
+        <a href="index.html#lab">Build a prompt</a>
+        <a href="https://github.com/yswami/SyntheticPersona/blob/main/docs/OCEAN.md">Source notes</a>
+        <a href="https://github.com/yswami/SyntheticPersona">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="article" class="article-shell">
+      <header class="article-hero">
+        <p class="eyebrow">An independent evaluation</p>
+        <h1>OCEAN adds tendencies—not destiny.</h1>
+        <p>
+          The Big Five can provide a disciplined vocabulary for personality variation.
+          It does not turn a generated participant into customer evidence.
+        </p>
+      </header>
+
+      <article class="article-content">
+        <section>
+          <h2>The verdict</h2>
+          <p class="standout">Use OCEAN as an optional variance scaffold. Do not use it as a behavior oracle.</p>
+          <p>
+            Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism
+            describe broad, continuous tendencies. They can help a simulation avoid one
+            generic voice, but they do not independently determine goals, expertise,
+            decision rights, workflow constraints, or what a customer will do.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why it is useful</h2>
+          <div class="article-grid">
+            <div>
+              <h3>Continuous variation</h3>
+              <p>The dimensions are sliders rather than fixed types, allowing controlled comparisons without invented biographies.</p>
+            </div>
+            <div>
+              <h3>Research foundation</h3>
+              <p>The Big Five has extensive psychometric research, including facet-level instruments and substantial cross-cultural study.</p>
+            </div>
+            <div>
+              <h3>Testable influence</h3>
+              <p>Keep the task constant, change only one trait, and inspect whether style changes without new facts or authority appearing.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Where the boundary sits</h2>
+          <div class="boundary-table" role="table" aria-label="OCEAN contributions and boundaries">
+            <div class="boundary-heading" role="row">
+              <strong role="columnheader">May influence</strong>
+              <strong role="columnheader">Does not establish</strong>
+            </div>
+            <div role="row"><span role="cell">Communication style</span><span role="cell">Domain expertise</span></div>
+            <div role="row"><span role="cell">Alternative exploration</span><span role="cell">Organizational authority</span></div>
+            <div role="row"><span role="cell">Preference for structure</span><span role="cell">Evidence requirements</span></div>
+            <div role="row"><span role="cell">Cooperative or direct framing</span><span role="cell">Product and workflow knowledge</span></div>
+            <div role="row"><span role="cell">Sensitivity to uncertainty</span><span role="cell">Real customer behavior</span></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>How Synthetic Users describes it</h2>
+          <p>
+            Synthetic Users publicly describes OCEAN as one layer in a larger architecture
+            that also includes behavioral signals, population calibration, situational context,
+            retrieval from customer-provided data, and multiple models. Its explanation says
+            traits influence tendencies rather than deterministically fixing choices.
+          </p>
+          <p>
+            Its more recent material describes neural-validation work as early and separately
+            cautions that representational alignment would not automatically validate downstream
+            behavioral predictions. Claims about its proprietary data, calibration, parity, and
+            implementation have not been independently tested by this project.
+          </p>
+        </section>
+
+        <section>
+          <h2>The LLM-specific caution</h2>
+          <p>
+            Published experiments show that language models can produce self-reports and text
+            aligned with assigned Big Five characteristics. Other results show unusually clean
+            personality structures and reduced robustness as roles become more complex.
+          </p>
+          <p>
+            A convincing personality performance can therefore be stronger than its real-world
+            behavioral validity. An assumed OCEAN score is still an assumption.
+          </p>
+          <div class="caution-note">
+            If a consequential product decision changes only because an assumed personality
+            score changed, take that decision to human research.
+          </div>
+        </section>
+
+        <section>
+          <h2>Sources</h2>
+          <ol class="source-list">
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/15740445/">McCrae, Terracciano et al. — personality traits across 50 cultures</a></li>
+            <li><a href="https://escholarship.org/uc/item/16x6n05t">Soto and John — the BFI-2 and its 15 facets</a></li>
+            <li><a href="https://simine.com/407/readings/Fleeson_2001.pdf">Fleeson — traits as distributions of behavioral states</a></li>
+            <li><a href="https://aclanthology.org/2024.findings-naacl.229/">Jiang et al. — PersonaLLM</a></li>
+            <li><a href="https://www.nature.com/articles/s41598-024-84109-5">Serapio-García et al. — LLM personality emulation</a></li>
+            <li><a href="https://www.syntheticusers.com/science-posts/synthetic-users-vs-digital-twins">Synthetic Users — OCEAN-style factor model</a></li>
+            <li><a href="https://www.syntheticusers.com/science-posts/synthetic-users-system-architecture-the-brain-version">Synthetic Users — system architecture</a></li>
+            <li><a href="https://www.syntheticusers.com/science-posts/so-where-does-the-data-come-from">Synthetic Users — OCEAN and persona vectors</a></li>
+          </ol>
+        </section>
+
+        <section class="article-cta">
+          <div>
+            <p class="eyebrow">Run the experiment</p>
+            <h2>Change the personality. Keep the evidence boundary.</h2>
+          </div>
+          <a class="button primary" href="index.html#lab">Build a reviewer</a>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>Independent, experimental, and educational. This is not a psychological assessment.</p>
+      <div>
+        <a href="index.html">Lab</a>
+        <a href="https://github.com/yswami/SyntheticPersona">Source</a>
+      </div>
+    </footer>
+  </body>
+</html>

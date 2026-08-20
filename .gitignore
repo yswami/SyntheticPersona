@@ -1,3 +1,9 @@
 .DS_Store
 *.swp
 *.tmp
+
+# Never commit local authentication material.
+key1
+key1.pub
+*.pem
+*.key
