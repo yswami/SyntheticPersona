@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Build an assumption-labeled or evidence-backed synthetic persona prompt, explore OCEAN personality variation, and prepare sharper questions for human research.">
+    <meta name="description" content="Run a 60-second synthetic-persona experiment, inspect a fictional enterprise PPM review, and copy or customize the reviewer prompt.">
     <meta name="theme-color" content="#f4efe6">
-    <meta property="og:title" content="Synthetic Persona Pre-flight Lab">
-    <meta property="og:description" content="Build a transparent synthetic reviewer prompt, explore OCEAN as optional variation, and prepare sharper questions for human research.">
+    <meta property="og:title" content="Personality adds variation. Evidence adds credibility.">
+    <meta property="og:description" content="See a fictional enterprise PPM reviewer challenge an AI recovery recommendation, then copy or customize the prompt.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yswami.github.io/SyntheticPersona/">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://yswami.github.io/SyntheticPersona/">
     <title>Synthetic Persona Pre-flight Lab</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260820">
   </head>
   <body>
-    <a class="skip-link" href="#lab">Skip to the lab</a>
+    <a class="skip-link" href="#sample">Skip to the experiment</a>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Synthetic Persona Lab home">
@@ -23,25 +23,26 @@
         <span>Pre-flight Lab</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#method">Method</a>
+        <a href="#method">How it works</a>
         <a href="#ocean">OCEAN</a>
-        <a href="#lab">Build a prompt</a>
+        <a href="#sample">Try sample</a>
         <a href="https://github.com/yswami/SyntheticPersona">GitHub</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">An open product-discovery experiment</p>
-          <h1>Give your product hypothesis a behavioral opponent.</h1>
+          <p class="eyebrow">A 60-second synthetic-persona experiment</p>
+          <h1 id="hero-title">Personality adds variation. Evidence adds credibility.</h1>
           <p class="hero-lede">
-            Configure a synthetic reviewer, make its assumptions visible, and generate
-            a prompt for a pre-flight evaluation before meeting real customers.
+            See a fictional enterprise PPM reviewer challenge an AI recovery
+            recommendation—then copy or customize the prompt. No sign-in, API key,
+            or stored data.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#lab">Build a reviewer</a>
-            <button class="button secondary" id="load-example-hero" type="button">Load the PPM example</button>
+            <button class="button primary" id="run-sample-hero" type="button">Run the PPM example</button>
+            <button class="button secondary" id="open-builder-hero" type="button">Build my own reviewer</button>
           </div>
           <ul class="privacy-list" aria-label="Privacy characteristics">
             <li>Runs locally</li>
@@ -50,232 +51,328 @@
           </ul>
         </div>
 
-        <aside class="hero-card" aria-label="Core principle">
-          <p class="card-kicker">The core distinction</p>
-          <div class="equation">
-            <span>Personality</span>
-            <span aria-hidden="true">+</span>
-            <span>Context</span>
-            <span aria-hidden="true">+</span>
-            <span>Behavior</span>
-            <span aria-hidden="true">+</span>
-            <span>Evidence</span>
+        <aside class="hero-card scenario-card" aria-label="Fictional Project Atlas scenario">
+          <p class="card-kicker">The fictional test</p>
+          <div class="scenario-status">
+            <span>Project Atlas</span>
+            <span class="scenario-chip">21 days late</span>
           </div>
-          <p class="equation-result">A testable synthetic reviewer</p>
-          <p>
-            Personality can add variation. Only traceable evidence can make a behavioral
-            claim research-grounded.
+          <p class="scenario-confidence"><strong>78%</strong> prediction confidence</p>
+          <p class="scenario-detail">
+            The assistant recommends moving two shared architects and applying a
+            recovery plan.
+          </p>
+          <p class="scenario-question">
+            What should a credible reviewer challenge before anyone clicks
+            <strong>Apply</strong>?
           </p>
         </aside>
       </section>
 
+      <section class="sample-section" id="sample" aria-labelledby="sample-title">
+        <div class="sample-shell">
+          <div class="sample-ready" id="sample-ready">
+            <div>
+              <p class="eyebrow">Value before configuration</p>
+              <h2 id="sample-title">See what the reviewer catches</h2>
+              <p>
+                No typing required. Load the fictional PPM scenario and inspect the
+                candidate risks before deciding whether to customize anything.
+              </p>
+            </div>
+            <button class="button primary" id="run-sample-inline" type="button">Reveal the review</button>
+          </div>
+
+          <div class="sample-result" id="sample-result" hidden>
+            <div class="result-heading">
+              <div>
+                <p class="eyebrow">Illustrative simulated output</p>
+                <h2 id="sample-result-title" tabindex="-1">Three challenges before “Apply”</h2>
+              </div>
+              <div class="result-badges" aria-label="Result status">
+                <span>Assumption-based</span>
+                <span>Not customer evidence</span>
+              </div>
+            </div>
+
+            <div class="finding-grid">
+              <article class="finding-card">
+                <span class="finding-number" aria-hidden="true">01</span>
+                <h3>Source trust</h3>
+                <p>
+                  A confidence score is insufficient without source records, data
+                  freshness, the dependency path, and labeled assumptions.
+                </p>
+              </article>
+              <article class="finding-card">
+                <span class="finding-number" aria-hidden="true">02</span>
+                <h3>Portfolio impact</h3>
+                <p>
+                  Recovering Project Atlas may delay Project Beacon; cross-project
+                  consequences must be visible.
+                </p>
+              </article>
+              <article class="finding-card">
+                <span class="finding-number" aria-hidden="true">03</span>
+                <h3>Decision boundary</h3>
+                <p>
+                  Schedule, cost, project health, notifications, and resource
+                  reassignment should not be bundled into one action.
+                </p>
+              </article>
+            </div>
+
+            <div class="verdict-card">
+              <div>
+                <p class="card-kicker">Simulated verdict</p>
+                <strong>Conditionally test</strong>
+              </div>
+              <p>Use it as an advisory what-if planner, not an autonomous rebalancer.</p>
+            </div>
+
+            <div class="sample-actions">
+              <button class="button primary" id="copy-sample-prompt" type="button">Copy reviewer prompt</button>
+              <button class="button secondary" id="customize-sample" type="button">Customize this reviewer</button>
+              <a class="text-link" href="https://github.com/yswami/SyntheticPersona/blob/main/examples/ppm-milestone-recovery/simulated-output.md">
+                View the full four-step example <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <p class="action-status sample-action-status" id="sample-action-status" aria-live="polite"></p>
+
+            <div class="sample-ocean-panel">
+              <div class="sample-ocean-control">
+                <p class="card-kicker">What OCEAN changes</p>
+                <label class="toggle-row" for="sample-ocean">
+                  <span>
+                    <strong>Include illustrative OCEAN variation</strong>
+                    <small>Change response tendencies—not the evidence status.</small>
+                  </span>
+                  <input id="sample-ocean" type="checkbox" role="switch" checked>
+                </label>
+              </div>
+              <div class="sample-ocean-copy">
+                <strong id="sample-ocean-mode">With illustrative OCEAN</strong>
+                <p id="sample-ocean-summary">
+                  Explore alternatives, seek completeness, respond reflectively,
+                  balance cooperation with challenge, and notice uncertainty early.
+                </p>
+              </div>
+              <p class="sample-invariant">
+                OCEAN changes response tendencies. It does not change the evidence
+                status, domain knowledge, decision rights, or research credibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" id="lab" aria-labelledby="builder-summary-title">
+        <details class="builder-disclosure" id="builder-disclosure">
+          <summary class="builder-summary" id="builder-summary" aria-controls="builder-content" aria-expanded="false">
+            <span>
+              <span class="eyebrow">Optional next step</span>
+              <strong id="builder-summary-title">Customize the reviewer</strong>
+              <small>Adjust the context, constraints, evidence status, and personality variation.</small>
+            </span>
+            <span class="builder-summary-action" id="builder-summary-action">Open builder</span>
+          </summary>
+
+          <div class="builder-content" id="builder-content">
+            <div class="section-heading lab-heading">
+              <div>
+                <p class="eyebrow">Build your own</p>
+                <h2>Configure the full prompt</h2>
+              </div>
+              <button class="button tertiary" id="load-example" type="button">Reload PPM example</button>
+            </div>
+
+            <div class="lab-layout">
+              <form class="builder-panel" id="persona-form">
+                <fieldset>
+                  <legend><span>1</span> Role and test context</legend>
+
+                  <label for="role">Reviewer role</label>
+                  <input id="role" name="role" type="text" value="Enterprise project manager">
+
+                  <label for="product">Product or feature being reviewed</label>
+                  <input id="product" name="product" type="text" value="AI milestone-recovery assistant">
+
+                  <label for="context">Operating context</label>
+                  <textarea id="context" name="context" rows="4">A portfolio of capital projects involving internal teams and external delivery partners. Status is reviewed weekly, with monthly steering committee reporting.</textarea>
+
+                  <label for="scenario">First screen or workflow step</label>
+                  <textarea id="scenario" name="scenario" rows="4">A project milestone may be delayed by 21 days. The prediction confidence is 78%, and the assistant recommends reallocating shared resources.</textarea>
+                </fieldset>
+
+                <fieldset>
+                  <legend><span>2</span> Evidence status</legend>
+                  <label for="evidence-status">How were the behavioral constraints created?</label>
+                  <select id="evidence-status" name="evidenceStatus">
+                    <option value="assumed" selected>Assumed for hypothesis testing</option>
+                    <option value="evidence">Derived from real research evidence</option>
+                  </select>
+
+                  <div id="evidence-wrapper">
+                    <label for="evidence-refs">Evidence references</label>
+                    <textarea id="evidence-refs" name="evidenceRefs" rows="3" placeholder="Example: E-014, E-021 — only use real, reviewable references" disabled></textarea>
+                    <p class="field-help" id="evidence-help">Enable only when every claimed behavior can be traced to real research.</p>
+                  </div>
+
+                  <div class="status-explainer" id="status-explainer" role="status">
+                    <span class="status-dot assumed" aria-hidden="true"></span>
+                    <div>
+                      <strong>Hypothesis reviewer</strong>
+                      <p>Useful for candidate objections and research questions—not customer evidence.</p>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <legend><span>3</span> Behavioral constraints</legend>
+
+                  <label for="posture">Operating posture</label>
+                  <textarea id="posture" name="posture" rows="3">Low tolerance for additional administrative work. Cautious about consequential automation.</textarea>
+
+                  <label for="evidence-needs">Evidence required before trust</label>
+                  <textarea id="evidence-needs" name="evidenceNeeds" rows="3">Require traceable source data, the affected dependency path, data freshness, assumptions, and a confidence level.</textarea>
+
+                  <label for="authority">Decision and authority boundaries</label>
+                  <textarea id="authority" name="authority" rows="3">Do not change an approved baseline, move budget, reallocate resources, or update executive project health without review and the appropriate approval.</textarea>
+
+                  <label for="risks">Risks this reviewer watches for</label>
+                  <textarea id="risks" name="risks" rows="3">Local optimization that delays another project, stale data, hidden cost impact, and actions that cross approval boundaries.</textarea>
+                </fieldset>
+
+                <fieldset>
+                  <legend><span>4</span> Optional personality variation</legend>
+                  <label class="toggle-row" for="include-ocean">
+                    <span>
+                      <strong>Include an illustrative OCEAN profile</strong>
+                      <small>Use for controlled variation, not user validation.</small>
+                    </span>
+                    <input id="include-ocean" name="includeOcean" type="checkbox" role="switch">
+                  </label>
+
+                  <div class="ocean-controls" id="ocean-controls" aria-hidden="true">
+                    <div class="slider-row">
+                      <label for="openness"><span>Openness</span><output for="openness" id="openness-value">50</output></label>
+                      <input id="openness" name="openness" type="range" min="0" max="100" value="50">
+                      <div class="range-labels"><span>Conventional</span><span>Exploratory</span></div>
+                    </div>
+                    <div class="slider-row">
+                      <label for="conscientiousness"><span>Conscientiousness</span><output for="conscientiousness" id="conscientiousness-value">50</output></label>
+                      <input id="conscientiousness" name="conscientiousness" type="range" min="0" max="100" value="50">
+                      <div class="range-labels"><span>Flexible</span><span>Structured</span></div>
+                    </div>
+                    <div class="slider-row">
+                      <label for="extraversion"><span>Extraversion</span><output for="extraversion" id="extraversion-value">50</output></label>
+                      <input id="extraversion" name="extraversion" type="range" min="0" max="100" value="50">
+                      <div class="range-labels"><span>Reserved</span><span>Expressive</span></div>
+                    </div>
+                    <div class="slider-row">
+                      <label for="agreeableness"><span>Agreeableness</span><output for="agreeableness" id="agreeableness-value">50</output></label>
+                      <input id="agreeableness" name="agreeableness" type="range" min="0" max="100" value="50">
+                      <div class="range-labels"><span>Challenging</span><span>Accommodating</span></div>
+                    </div>
+                    <div class="slider-row">
+                      <label for="neuroticism"><span>Negative emotionality</span><output for="neuroticism" id="neuroticism-value">50</output></label>
+                      <input id="neuroticism" name="neuroticism" type="range" min="0" max="100" value="50">
+                      <div class="range-labels"><span>Emotionally steady</span><span>Threat-sensitive</span></div>
+                    </div>
+                    <p class="field-help">
+                      These labels are simplified prompts for an experiment—not a psychological assessment.
+                    </p>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <legend><span>5</span> Session rules</legend>
+                  <div class="check-grid">
+                    <label><input type="checkbox" name="rules" value="Reveal and evaluate one screen or workflow step at a time." checked> One step at a time</label>
+                    <label><input type="checkbox" name="rules" value="Use only the information revealed so far." checked> No future knowledge</label>
+                    <label><input type="checkbox" name="rules" value="Label every inference or unsupported detail as an assumption." checked> Label assumptions</label>
+                    <label><input type="checkbox" name="rules" value="Do not invent product behavior, company policy, or prior experience." checked> Do not invent facts</label>
+                    <label><input type="checkbox" name="rules" value="Stay in the reviewer perspective rather than becoming a generic design expert." checked> Stay in character</label>
+                    <label><input type="checkbox" name="rules" value="Convert simulated objections into questions for research with real people." checked> End with research questions</label>
+                  </div>
+                </fieldset>
+              </form>
+
+              <aside class="output-panel" aria-labelledby="output-title">
+                <div class="output-header">
+                  <div>
+                    <p class="output-kicker">Generated locally</p>
+                    <h3 id="output-title">Reviewer prompt</h3>
+                  </div>
+                  <span class="evidence-badge assumed" id="evidence-badge">Assumption-based</span>
+                </div>
+
+                <div class="output-actions">
+                  <button class="button small primary" id="copy-prompt" type="button">Copy prompt</button>
+                  <button class="button small secondary" id="download-prompt" type="button">Download .txt</button>
+                  <button class="button small ghost" id="reset-form" type="button">Reset</button>
+                </div>
+
+                <pre id="prompt-output" tabindex="0" aria-label="Generated reviewer prompt"></pre>
+                <p class="action-status" id="action-status" aria-live="polite"></p>
+
+                <div class="trust-test">
+                  <p class="card-kicker">Use the three-question trust test</p>
+                  <ol>
+                    <li><strong>Trace:</strong> Can the user inspect the evidence?</li>
+                    <li><strong>Impact:</strong> Can the user see downstream consequences?</li>
+                    <li><strong>Control:</strong> Can the user govern what happens next?</li>
+                  </ol>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </details>
+      </section>
+
       <section class="method-section" id="method" aria-labelledby="method-title">
         <div class="section-heading">
-          <p class="eyebrow">A transparent method</p>
-          <h2 id="method-title">Know what each layer contributes</h2>
-          <p>Do not ask one prompt to silently turn plausibility into evidence.</p>
+          <p class="eyebrow">How the prompt earns its usefulness</p>
+          <h2 id="method-title">Three layers, three different jobs</h2>
+          <p>Keep context, variation, and evidence separate so plausibility never masquerades as research.</p>
         </div>
 
         <div class="layer-grid">
           <article class="layer-card">
             <span class="layer-number">01</span>
-            <h3>Role and context</h3>
-            <p>Define the work, task, product environment, pressures, and information visible at that moment.</p>
+            <h3>Context and constraints</h3>
+            <p>Define the role, task, evidence threshold, decision boundaries, risks, and operating pressures relevant to the test.</p>
           </article>
-          <article class="layer-card">
+          <article class="layer-card accent">
             <span class="layer-number">02</span>
-            <h3>Behavioral constraints</h3>
-            <p>State the evidence threshold, decision boundaries, risks, and operating posture relevant to the test.</p>
+            <h3>Optional personality variation</h3>
+            <p>Use OCEAN to vary response tendencies without inventing domain knowledge, authority, or customer needs.</p>
           </article>
           <article class="layer-card">
             <span class="layer-number">03</span>
-            <h3>Evidence status</h3>
+            <h3>Evidence boundary</h3>
             <p>Label every behavior as assumed or connect it to a real, reviewable evidence reference.</p>
           </article>
-          <article class="layer-card accent">
-            <span class="layer-number">04</span>
-            <h3>Optional OCEAN layer</h3>
-            <p>Add continuous personality variation without treating it as domain knowledge, authority, or customer proof.</p>
-          </article>
         </div>
       </section>
 
-      <section class="ocean-section" id="ocean" aria-labelledby="ocean-title">
+      <section class="ocean-section compact-ocean" id="ocean" aria-labelledby="ocean-title">
         <div class="ocean-intro">
-          <p class="eyebrow">Five sliders, not five boxes</p>
-          <h2 id="ocean-title">OCEAN adds tendencies—not destiny</h2>
+          <p class="eyebrow">A variation layer, not an evidence layer</p>
+          <h2 id="ocean-title">OCEAN changes the lens—not the facts</h2>
           <p>
-            The Big Five describes broad, continuous personality dimensions. It can help
-            diversify how a reviewer communicates and explores a situation, but behavior
-            still depends on role, incentives, task, context, and evidence.
+            The Big Five can diversify how a reviewer communicates, explores alternatives,
+            and responds to uncertainty. Role, incentives, task, context, and evidence still
+            determine what the simulation can responsibly claim.
           </p>
-          <a class="text-link" href="ocean.html">Read the evaluation and sources <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="ocean.html">Read the full OCEAN evaluation and sources <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="ocean-key" aria-label="OCEAN dimensions">
-          <div><strong>O</strong><span>Openness</span></div>
-          <div><strong>C</strong><span>Conscientiousness</span></div>
-          <div><strong>E</strong><span>Extraversion</span></div>
-          <div><strong>A</strong><span>Agreeableness</span></div>
-          <div><strong>N</strong><span>Negative emotionality</span></div>
-        </div>
-
-        <div class="caution-note">
-          <strong>Important:</strong> An OCEAN profile is illustrative unless its scores
-          and interpretation are supported by an appropriate measurement process. It does
-          not make a persona evidence-backed.
-        </div>
-      </section>
-
-      <section class="lab-section" id="lab" aria-labelledby="lab-title">
-        <div class="section-heading lab-heading">
-          <div>
-            <p class="eyebrow">Try the method</p>
-            <h2 id="lab-title">Build your synthetic reviewer</h2>
-          </div>
-          <button class="button tertiary" id="load-example" type="button">Load PPM example</button>
-        </div>
-
-        <div class="lab-layout">
-          <form class="builder-panel" id="persona-form">
-            <fieldset>
-              <legend><span>1</span> Role and test context</legend>
-
-              <label for="role">Reviewer role</label>
-              <input id="role" name="role" type="text" value="Enterprise project manager">
-
-              <label for="product">Product or feature being reviewed</label>
-              <input id="product" name="product" type="text" value="AI milestone-recovery assistant">
-
-              <label for="context">Operating context</label>
-              <textarea id="context" name="context" rows="4">A portfolio of capital projects involving internal teams and external delivery partners. Status is reviewed weekly, with monthly steering committee reporting.</textarea>
-
-              <label for="scenario">First screen or workflow step</label>
-              <textarea id="scenario" name="scenario" rows="4">A project milestone may be delayed by 21 days. The prediction confidence is 78%, and the assistant recommends reallocating shared resources.</textarea>
-            </fieldset>
-
-            <fieldset>
-              <legend><span>2</span> Evidence status</legend>
-              <label for="evidence-status">How were the behavioral constraints created?</label>
-              <select id="evidence-status" name="evidenceStatus">
-                <option value="assumed" selected>Assumed for hypothesis testing</option>
-                <option value="evidence">Derived from real research evidence</option>
-              </select>
-
-              <div id="evidence-wrapper">
-                <label for="evidence-refs">Evidence references</label>
-                <textarea id="evidence-refs" name="evidenceRefs" rows="3" placeholder="Example: E-014, E-021 — only use real, reviewable references" disabled></textarea>
-                <p class="field-help" id="evidence-help">Enable only when every claimed behavior can be traced to real research.</p>
-              </div>
-
-              <div class="status-explainer" id="status-explainer" role="status">
-                <span class="status-dot assumed" aria-hidden="true"></span>
-                <div>
-                  <strong>Hypothesis reviewer</strong>
-                  <p>Useful for candidate objections and research questions—not customer evidence.</p>
-                </div>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend><span>3</span> Behavioral constraints</legend>
-
-              <label for="posture">Operating posture</label>
-              <textarea id="posture" name="posture" rows="3">Low tolerance for additional administrative work. Cautious about consequential automation.</textarea>
-
-              <label for="evidence-needs">Evidence required before trust</label>
-              <textarea id="evidence-needs" name="evidenceNeeds" rows="3">Require traceable source data, the affected dependency path, data freshness, assumptions, and a confidence level.</textarea>
-
-              <label for="authority">Decision and authority boundaries</label>
-              <textarea id="authority" name="authority" rows="3">Do not change an approved baseline, move budget, reallocate resources, or update executive project health without review and the appropriate approval.</textarea>
-
-              <label for="risks">Risks this reviewer watches for</label>
-              <textarea id="risks" name="risks" rows="3">Local optimization that delays another project, stale data, hidden cost impact, and actions that cross approval boundaries.</textarea>
-            </fieldset>
-
-            <fieldset>
-              <legend><span>4</span> Optional personality variation</legend>
-              <label class="toggle-row" for="include-ocean">
-                <span>
-                  <strong>Include an illustrative OCEAN profile</strong>
-                  <small>Use for controlled variation, not user validation.</small>
-                </span>
-                <input id="include-ocean" name="includeOcean" type="checkbox" role="switch">
-              </label>
-
-              <div class="ocean-controls" id="ocean-controls" aria-hidden="true">
-                <div class="slider-row">
-                  <label for="openness"><span>Openness</span><output for="openness" id="openness-value">50</output></label>
-                  <input id="openness" name="openness" type="range" min="0" max="100" value="50">
-                  <div class="range-labels"><span>Conventional</span><span>Exploratory</span></div>
-                </div>
-                <div class="slider-row">
-                  <label for="conscientiousness"><span>Conscientiousness</span><output for="conscientiousness" id="conscientiousness-value">50</output></label>
-                  <input id="conscientiousness" name="conscientiousness" type="range" min="0" max="100" value="50">
-                  <div class="range-labels"><span>Flexible</span><span>Structured</span></div>
-                </div>
-                <div class="slider-row">
-                  <label for="extraversion"><span>Extraversion</span><output for="extraversion" id="extraversion-value">50</output></label>
-                  <input id="extraversion" name="extraversion" type="range" min="0" max="100" value="50">
-                  <div class="range-labels"><span>Reserved</span><span>Expressive</span></div>
-                </div>
-                <div class="slider-row">
-                  <label for="agreeableness"><span>Agreeableness</span><output for="agreeableness" id="agreeableness-value">50</output></label>
-                  <input id="agreeableness" name="agreeableness" type="range" min="0" max="100" value="50">
-                  <div class="range-labels"><span>Challenging</span><span>Accommodating</span></div>
-                </div>
-                <div class="slider-row">
-                  <label for="neuroticism"><span>Negative emotionality</span><output for="neuroticism" id="neuroticism-value">50</output></label>
-                  <input id="neuroticism" name="neuroticism" type="range" min="0" max="100" value="50">
-                  <div class="range-labels"><span>Emotionally steady</span><span>Threat-sensitive</span></div>
-                </div>
-                <p class="field-help">
-                  These labels are simplified prompts for an experiment—not a psychological assessment.
-                </p>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend><span>5</span> Session rules</legend>
-              <div class="check-grid">
-                <label><input type="checkbox" name="rules" value="Reveal and evaluate one screen or workflow step at a time." checked> One step at a time</label>
-                <label><input type="checkbox" name="rules" value="Use only the information revealed so far." checked> No future knowledge</label>
-                <label><input type="checkbox" name="rules" value="Label every inference or unsupported detail as an assumption." checked> Label assumptions</label>
-                <label><input type="checkbox" name="rules" value="Do not invent product behavior, company policy, or prior experience." checked> Do not invent facts</label>
-                <label><input type="checkbox" name="rules" value="Stay in the reviewer perspective rather than becoming a generic design expert." checked> Stay in character</label>
-                <label><input type="checkbox" name="rules" value="Convert simulated objections into questions for research with real people." checked> End with research questions</label>
-              </div>
-            </fieldset>
-          </form>
-
-          <aside class="output-panel" aria-labelledby="output-title">
-            <div class="output-header">
-              <div>
-                <p class="output-kicker">Generated locally</p>
-                <h3 id="output-title">Reviewer prompt</h3>
-              </div>
-              <span class="evidence-badge assumed" id="evidence-badge">Assumption-based</span>
-            </div>
-
-            <div class="output-actions">
-              <button class="button small primary" id="copy-prompt" type="button">Copy prompt</button>
-              <button class="button small secondary" id="download-prompt" type="button">Download .txt</button>
-              <button class="button small ghost" id="reset-form" type="button">Reset</button>
-            </div>
-
-            <pre id="prompt-output" tabindex="0" aria-label="Generated reviewer prompt"></pre>
-            <p class="action-status" id="action-status" aria-live="polite"></p>
-
-            <div class="trust-test">
-              <p class="card-kicker">Use the three-question trust test</p>
-              <ol>
-                <li><strong>Trace:</strong> Can the user inspect the evidence?</li>
-                <li><strong>Impact:</strong> Can the user see downstream consequences?</li>
-                <li><strong>Control:</strong> Can the user govern what happens next?</li>
-              </ol>
-            </div>
-          </aside>
-        </div>
+        <aside class="ocean-boundary" aria-label="OCEAN boundary">
+          <p class="card-kicker">Keep this boundary visible</p>
+          <div><strong>Can vary</strong><span>Tone, exploration, structure, challenge, sensitivity to uncertainty</span></div>
+          <div><strong>Cannot prove</strong><span>Customer needs, domain knowledge, authority, prevalence, product validation</span></div>
+        </aside>
       </section>
 
       <section class="closing-section">
@@ -284,9 +381,9 @@
           <h2>A pre-flight check is not a boarding pass.</h2>
         </div>
         <p>
-          Run the prompt to surface assumptions, edge cases, and better questions. Then
-          take those questions to real people. Generated reactions are simulated and
-          must never be presented as participant findings.
+          Use simulated reactions to surface assumptions, edge cases, and better
+          questions. Then take those questions to real people. Never present generated
+          reactions as participant findings.
         </p>
         <a class="button secondary" href="https://github.com/yswami/SyntheticPersona/blob/main/docs/GUARDRAILS.md">Review the guardrails</a>
       </section>
@@ -301,6 +398,6 @@
       </div>
     </footer>
 
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20260820" defer></script>
   </body>
 </html>

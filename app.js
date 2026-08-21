@@ -11,6 +11,16 @@
   var includeOcean = document.getElementById("include-ocean");
   var oceanControls = document.getElementById("ocean-controls");
   var actionStatus = document.getElementById("action-status");
+  var sampleReady = document.getElementById("sample-ready");
+  var sampleResult = document.getElementById("sample-result");
+  var sampleResultTitle = document.getElementById("sample-result-title");
+  var sampleOcean = document.getElementById("sample-ocean");
+  var sampleOceanMode = document.getElementById("sample-ocean-mode");
+  var sampleOceanSummary = document.getElementById("sample-ocean-summary");
+  var sampleActionStatus = document.getElementById("sample-action-status");
+  var builderDisclosure = document.getElementById("builder-disclosure");
+  var builderSummary = document.getElementById("builder-summary");
+  var builderSummaryAction = document.getElementById("builder-summary-action");
 
   var traitIds = [
     "openness",
@@ -231,6 +241,18 @@
     statusExplainer.appendChild(copy);
   }
 
+  function updateSampleOceanUI(enabled) {
+    sampleOcean.checked = enabled;
+
+    if (enabled) {
+      sampleOceanMode.textContent = "With illustrative OCEAN";
+      sampleOceanSummary.textContent = "Explore alternatives, seek completeness, respond reflectively, balance cooperation with challenge, and notice uncertainty early.";
+    } else {
+      sampleOceanMode.textContent = "Without OCEAN variation";
+      sampleOceanSummary.textContent = "No personality guidance is added. The reviewer still challenges the same evidence, portfolio impact, and decision boundaries.";
+    }
+  }
+
   function updateOceanUI() {
     var enabled = includeOcean.checked;
     oceanControls.classList.toggle("enabled", enabled);
@@ -238,6 +260,7 @@
     traitIds.forEach(function (id) {
       document.getElementById(id).disabled = !enabled;
     });
+    updateSampleOceanUI(enabled);
   }
 
   function updateSliderOutput(input) {
@@ -279,30 +302,32 @@
     });
   }
 
-  function setActionStatus(message) {
-    actionStatus.textContent = message;
-    window.clearTimeout(setActionStatus.timeoutId);
-    setActionStatus.timeoutId = window.setTimeout(function () {
-      actionStatus.textContent = "";
+  function setActionStatus(message, target) {
+    var statusTarget = target || actionStatus;
+
+    statusTarget.textContent = message;
+    window.clearTimeout(statusTarget.timeoutId);
+    statusTarget.timeoutId = window.setTimeout(function () {
+      statusTarget.textContent = "";
     }, 3200);
   }
 
-  function copyPrompt() {
+  function copyPrompt(statusTarget) {
     var text = promptOutput.textContent;
 
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(function () {
-        setActionStatus("Prompt copied to the clipboard.");
+        setActionStatus("Prompt copied to the clipboard.", statusTarget);
       }).catch(function () {
-        fallbackCopy(text);
+        fallbackCopy(text, statusTarget);
       });
       return;
     }
 
-    fallbackCopy(text);
+    fallbackCopy(text, statusTarget);
   }
 
-  function fallbackCopy(text) {
+  function fallbackCopy(text, statusTarget) {
     var textarea = document.createElement("textarea");
     textarea.value = text;
     textarea.setAttribute("readonly", "");
@@ -313,9 +338,9 @@
 
     try {
       document.execCommand("copy");
-      setActionStatus("Prompt copied to the clipboard.");
+      setActionStatus("Prompt copied to the clipboard.", statusTarget);
     } catch (error) {
-      setActionStatus("Copy was blocked. Select the prompt and copy it manually.");
+      setActionStatus("Copy was blocked. Open the builder to select the prompt manually.", statusTarget);
     }
 
     document.body.removeChild(textarea);
@@ -337,13 +362,44 @@
     setActionStatus("Prompt downloaded as " + filename + ".");
   }
 
-  function loadExample(scroll) {
+  function loadExample() {
     resetSessionRules();
     applyValues(ppmPreset);
     setActionStatus("Fictional PPM example loaded. Its OCEAN profile is illustrative.");
-    if (scroll) {
-      document.getElementById("lab").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function motionBehavior() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  }
+
+  function runSample() {
+    resetSessionRules();
+    applyValues(ppmPreset);
+    sampleReady.hidden = true;
+    sampleResult.hidden = false;
+    document.getElementById("sample").setAttribute("aria-labelledby", "sample-result-title");
+    sampleResultTitle.focus({ preventScroll: true });
+    sampleResult.scrollIntoView({ behavior: motionBehavior(), block: "start" });
+  }
+
+  function updateBuilderSummary() {
+    var isOpen = builderDisclosure.open;
+    builderSummary.setAttribute("aria-expanded", String(isOpen));
+    builderSummaryAction.textContent = isOpen ? "Close builder" : "Open builder";
+  }
+
+  function openBuilder(useStarter) {
+    if (useStarter) {
+      resetSessionRules();
+      applyValues(defaults);
     }
+
+    builderDisclosure.open = true;
+    updateBuilderSummary();
+
+    window.setTimeout(function () {
+      document.getElementById("role").focus();
+    }, 0);
   }
 
   form.addEventListener("input", function (event) {
@@ -360,7 +416,32 @@
     buildPrompt();
   });
 
-  document.getElementById("copy-prompt").addEventListener("click", copyPrompt);
+  sampleOcean.addEventListener("change", function () {
+    includeOcean.checked = sampleOcean.checked;
+    updateOceanUI();
+    buildPrompt();
+    setActionStatus(
+      sampleOcean.checked ? "Illustrative OCEAN variation added to the prompt." : "OCEAN variation removed. The findings and evidence status are unchanged.",
+      sampleActionStatus
+    );
+  });
+
+  document.getElementById("run-sample-hero").addEventListener("click", runSample);
+  document.getElementById("run-sample-inline").addEventListener("click", runSample);
+  document.getElementById("copy-sample-prompt").addEventListener("click", function () {
+    copyPrompt(sampleActionStatus);
+  });
+  document.getElementById("customize-sample").addEventListener("click", function () {
+    openBuilder(false);
+  });
+  document.getElementById("open-builder-hero").addEventListener("click", function () {
+    openBuilder(true);
+  });
+  builderDisclosure.addEventListener("toggle", updateBuilderSummary);
+
+  document.getElementById("copy-prompt").addEventListener("click", function () {
+    copyPrompt(actionStatus);
+  });
   document.getElementById("download-prompt").addEventListener("click", downloadPrompt);
   document.getElementById("reset-form").addEventListener("click", function () {
     resetSessionRules();
@@ -368,13 +449,11 @@
     setActionStatus("Form reset to the assumption-based starter.");
   });
   document.getElementById("load-example").addEventListener("click", function () {
-    loadExample(false);
-  });
-  document.getElementById("load-example-hero").addEventListener("click", function () {
-    loadExample(true);
+    loadExample();
   });
 
   updateOceanUI();
+  updateBuilderSummary();
   traitIds.forEach(function (id) {
     updateSliderOutput(document.getElementById(id));
   });
